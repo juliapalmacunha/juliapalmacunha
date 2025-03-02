@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'poppins-regular';
+  src: url('/public/fontes/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'gilroy-regular';
+  src: url('/public/fontes/Gilroy-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'gilroy-semibold';
+  src: url('/public/fontes/Gilroy-SemiBold.ttf');
+}
+
+
+@font-face {
+  font-family: 'code-regular';
+  src: url('/public/fontes/SourceCodePro-Regular.ttf');
+}
+
+
+@font-face {
+  font-family: 'poppins-semibold';
+  src: url('/public/fontes/Poppins-SemiBold.ttf');
+}
+
+
+@font-face {
+  font-family: 'code-semibold';
+  src: url('/public/fontes/SourceCodePro-SemiBold.ttf');
+}
+
+
+@theme {
+  --font-gilroyRegular: "gilroy-regular"; 
+  --font-poppinsRegular: "poppins-regular"; 
+  --font-codeRegular: "code-regular"; 
+  --font-poppinsSemibold: "poppins-semibold";
+  --font-codeSemibold: "code-semibold"; 
+}
+
+
+
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: white;
+  background-color: #17072b;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth; /* Ativando a rolagem suave */
+
+  
+}
+
+
+
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #1A1A2E;
+  }
+ 
+}
