@@ -7,9 +7,9 @@ import { FaGithub } from "react-icons/fa6";
 import EnglobaTitulo from "../componentes/EnglobaTitulo";
 
 const projetos = [
-    { nome: "Keychain ERP", texto: "Sistema de gestão de vendas com dashboards, cadastro de produtos e clientes, controle de estoque e análise de metas.", tecnologias: "React  Firebase  Mui  Recharts", img: "public/imagens/erp.png", site: "https://keychain-erp.vercel.app/" },
-    { nome: "Delivery Burguer", texto: "Plataforma de delivery com cardápio online, carrinho de compras e finalização direta via WhatsApp.", tecnologias: "Javascript  Html  Tailwindcss", img: "public/imagens/delivery.png", site: "https://projeto-delivery-pi.vercel.app/" },
-    { nome: "Jogo Educativo", texto: "Jogo interativo para ensinar inglês a crianças com feedback positivo e pronúncia dos nomes dos animais.", tecnologias: "Javascript Html  Css", img: "public/imagens/jogo.png", site: "https://jogo-educativo-sigma.vercel.app/" },
+    { nome: "Keychain ERP", texto: "Sistema de gestão de vendas com dashboards, cadastro de produtos e clientes, controle de estoque e análise de metas.", tecnologias: "React  Firebase  Mui  Recharts", img: "/imagens/erp.png", site: "https://keychain-erp.vercel.app/" },
+    { nome: "Delivery Burguer", texto: "Plataforma de delivery com cardápio online, carrinho de compras e finalização direta via WhatsApp.", tecnologias: "Javascript  Html  Tailwindcss", img: "/imagens/delivery.png", site: "https://projeto-delivery-pi.vercel.app/" },
+    { nome: "Jogo Educativo", texto: "Jogo interativo para ensinar inglês a crianças com feedback positivo e pronúncia dos nomes dos animais.", tecnologias: "Javascript Html  Css", img: "/imagens/jogo.png", site: "https://jogo-educativo-sigma.vercel.app/" },
    
 ]
 
