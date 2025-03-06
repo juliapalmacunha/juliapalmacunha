@@ -34,12 +34,12 @@ const PageHabilidades = () => {
 
 
 
-        <section className=" text-white m-[20px] font-poppinsRegular "
-        id='habilidades'
+        <section className=" text-white m-[20px] font-poppinsRegular lg:h-[350px] h-[850px] "
+            id='habilidades'
         >
 
 
-           
+
 
 
             <EnglobaTitulo>
@@ -47,7 +47,7 @@ const PageHabilidades = () => {
             </EnglobaTitulo>
 
 
-            <div className='mt-[100px] w-full h-[200px] flex justify-between text-white' >
+            <div className='mt-[100px] w-full h-[200px] flex flex-wrap  justify-center lg:justify-between text-white gap-[50px] ' >
 
                 {habilidades.map((habilidade) => {
                     return <motion.div
@@ -58,7 +58,7 @@ const PageHabilidades = () => {
 
 
                     >
-                        <div key={habilidade.nome} className='w-[320px] h-[250px] rounded-lg font-codeSemibold text-[28px] overflow-hidden 
+                        <div key={habilidade.nome} className=' w-[380px] lg:w-[320px] h-[250px] rounded-lg font-codeSemibold text-[28px] overflow-hidden 
                     bg-[#ffffff00] hover:bg-[#beaeae95] 
                     hover:scale-110 transition-transform duration-1000 ease-in-out'
                         >

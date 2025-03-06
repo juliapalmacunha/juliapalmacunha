@@ -25,14 +25,14 @@ const Contato = () => {
 
   return (
 
-    <section className='text-white m-[20px] font-poppinsRegular'
+    <section className='text-white m-[20px] font-poppinsRegular  '
     id='contato'
     >
       <EnglobaTitulo>Contato</EnglobaTitulo>
 
-      <div className='w-full h-[450px]'>
+      <div className='w-full h-[450px] lg:w-[50%] '>
         <form
-          className='flex flex-col gap-[12px] text-start p-[40px] w-[50%] h-full'
+          className='flex flex-col gap-[12px] text-start lg:p-[40px] w-full h-full'
           onSubmit={handleSendEmail}
         >
           <div>

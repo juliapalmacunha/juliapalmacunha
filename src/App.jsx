@@ -19,7 +19,7 @@ function App() {
 
       <Cabecalho />
 
-      <main className='ml-[200px] mr-[200px] w-[full] ' >
+      <main className='w-full lg:w-[calc(100%-400px)] lg:ml-[200px] lg:mr-[200px]'>
 
         
         <div className='h-[180px] w-full ' ></div>

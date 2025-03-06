@@ -13,7 +13,7 @@ const Cabecalho = () => {
 
     return (
 
-        <div className='flex fixed justify-between items-center top-0 left-0 h-[80px] w-full bg-[#1A1A2E] font-codeRegular text-[14px] z-50 '>
+        <div className='flex fixed justify-between items-center top-0 left-0 h-[80px] w-full   bg-[#020407] font-codeRegular text-[14px] z-50  '>
 
             <p className='text-black-500 ml-[100px]  text-[25px]' > Júlia Palma Cunha </p>
 

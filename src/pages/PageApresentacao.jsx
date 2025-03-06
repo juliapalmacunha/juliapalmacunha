@@ -16,18 +16,19 @@ const Apresentacao = () => {
     { nome: "TypeScript" },
     { nome: "C++" },
     { nome: "TailwindCSS"},
-    { nome: "Material UI" },
     { nome: "Styled Components" },
+    { nome: "Material UI" },
     { nome: "Node.js"},
     { nome: "Firebase" },
     { nome: "Git" },
-    { nome: "GitHub"  }
+    { nome: "GitHub" }
+    
   ];
 
   return (
 
     <section 
-      className="flex justify-start text-white m-[20px] font-poppinsRegular space-x-[150px] items-center"
+      className= " lg:gap-[10px]  flex-wrap lg:flex lg:w-full justify-start text-white p-[10px] font-poppinsRegular  items-center  w-[450px] "
       id="sobre"
     >
      
@@ -41,9 +42,9 @@ const Apresentacao = () => {
           Sobre mim
         </EnglobaTitulo>
 
-        <div className="w-[500px]">
-          <p>Lorem ipsum dolor sit Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium tempore ducimus voluptas quos in quia culpa laboriosam eius. Alias nulla facilis sequi praesentium, dolore debitis voluptas quaerat ab voluptates fugiat..</p>
-          <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat excepturi accusamus, consequuntur reiciendis sapiente ipsa sunt soluta optio harum provident, exercitationem nulla quibusdam distinctio quae. Tempora veniam saepe harum earum! ..</p>
+        <div className="lg:w-[50%] text-justify">
+          <p>Sou uma entusiasta da tecnologia, dedicada a transformar linhas de código em soluções inovadoras. Atualmente graduanda no curso de Ciencias & Tecnologia e estudos voltados para o desenvolvimento de aplicações web. Busco impulsionar o progresso tecnológico, almejando criar impacto positivo por meio da programação. Aqui estão algumas tecnologias com as quais estou familiarizada:</p>
+          
         </div>
       </motion.div>
 
@@ -55,7 +56,7 @@ const Apresentacao = () => {
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-wrap gap-1 m-[10px] justify-start pt-16">
+        <div className="flex flex-wrap p-[10px] justify-start pt-16 gap-[12px] lg:w-[50%] ">
           {logos.map((logo, index) => (
             <motion.div 
               key={logo.nome} 
@@ -81,10 +82,10 @@ const Apresentacao = () => {
           transition={{ duration: 1.2 }}
           viewport={{ once: true }}
         >
-          <p className="pt-18">Quer saber mais sobre minha jornada? Você pode baixar meu currículo clicando no botão abaixo.</p>
+          <p className="pt-18 lg:w-[50%] ">Quer saber mais sobre minha jornada? Você pode baixar meu currículo clicando no botão abaixo.</p>
 
-          <section className="flex justify-center items-center mt-10">
-            <a href="/curriculo.pdf" download className="relative inline-block px-6 py-3 rounded-lg font-bold bg-[#c300ff] text-black overflow-hidden group">
+          <section className="flex lg:justify-start justify-center items-center mt-10">
+            <a href="/julia palma curricul.pdf" download className="relative inline-block px-6 py-3 rounded-lg font-bold bg-[#c300ff] text-black overflow-hidden group">
               <span className="absolute inset-0 w-full h-full bg-[#7f5c97] transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-500 ease-in-out"></span>
               <span className="relative z-40  text-white flex">
                 <FaFileDownload 
@@ -95,6 +96,7 @@ const Apresentacao = () => {
             </a>
           </section>
         </motion.div>
+
       </motion.div>
     </section>
   );
