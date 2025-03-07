@@ -41,7 +41,7 @@ const PageHabilidades = () => {
             </EnglobaTitulo>
 
 
-            <div className='mt-[100px] w-full h-[200px] flex flex-wrap  justify-center lg:justify-between text-white gap-[50px] ' >
+            <div className='mt-[70px] w-full h-[200px] flex flex-wrap  justify-center lg:justify-between text-white gap-[50px]  ' >
 
                 {habilidades.map((habilidade) => {
                     return <motion.div

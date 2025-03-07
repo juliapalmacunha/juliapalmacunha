@@ -56,7 +56,7 @@ const Apresentacao = () => {
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-wrap p-[10px] justify-start pt-16 gap-[12px] lg:w-[50%] ">
+        <div className="flex flex-wrap p-[10px] justify-start pt-12 gap-[12px] lg:w-[50%] ">
           {logos.map((logo, index) => (
             <motion.div 
               key={logo.nome} 
@@ -82,9 +82,9 @@ const Apresentacao = () => {
           transition={{ duration: 1.2 }}
           viewport={{ once: true }}
         >
-          <p className="pt-18 lg:w-[50%] ">Quer saber mais sobre minha jornada? Você pode baixar meu currículo clicando no botão abaixo.</p>
+          <p className="pt-7 lg:w-[50%] ">Quer saber mais sobre minha jornada? Você pode baixar meu currículo clicando no botão abaixo.</p>
 
-          <section className="flex lg:justify-start justify-center items-center mt-10">
+          <section className="flex lg:justify-start justify-center items-center mt-6">
             <a href="/julia palma curricul.pdf" download className="relative inline-block px-6 py-3 rounded-lg font-bold bg-[#c300ff] text-black overflow-hidden group">
               <span className="absolute inset-0 w-full h-full bg-[#8136b3] transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-500 ease-in-out"></span>
               <span className="relative z-40  text-white flex">
