@@ -7,6 +7,7 @@ import Projetos from './pages/PageProjetos'
 import Habilidades from './pages/PageHabilidades'
 import Divisor from './componentes/Divisor'
 import Contato from './pages/PageContato'
+import Certificados from './pages/Certificados'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
 
       <Cabecalho />
 
-      <main className='w-full lg:w-[calc(100%-400px)] lg:ml-[200px] lg:mr-[200px]'>
+      <main className='w-[85%]  m-auto lg:w-[calc(100%-200px)] lg:ml-[100px] lg:mr-[100px]'>
 
         
         <div className='h-[180px] w-full ' ></div>

@@ -25,7 +25,7 @@ const Contato = () => {
 
   return (
 
-    <section className='text-white m-[20px] font-poppinsRegular  '
+    <section className='text-white m-[20px] mb-[5px] font-poppinsRegular'
     id='contato'
     >
       <EnglobaTitulo>Contato</EnglobaTitulo>
@@ -84,6 +84,7 @@ const Contato = () => {
           </button>
         </form>
       </div>
+
     </section>
   );
 };

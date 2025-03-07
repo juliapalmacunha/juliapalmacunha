@@ -34,13 +34,7 @@ const PageHabilidades = () => {
 
 
 
-        <section className=" text-white m-[20px] font-poppinsRegular lg:h-[350px] h-[850px] "
-            id='habilidades'
-        >
-
-
-
-
+        <section className=" text-white m-[20px] font-poppinsRegular lg:h-[350px] h-[935px] " id='habilidades'>
 
             <EnglobaTitulo>
                 Habilidades
@@ -55,9 +49,8 @@ const PageHabilidades = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true }}
-
-
                     >
+
                         <div key={habilidade.nome} className=' w-[380px] lg:w-[320px] h-[250px] rounded-lg font-codeSemibold text-[28px] overflow-hidden 
                     bg-[#ffffff00] hover:bg-[#beaeae95] 
                     hover:scale-110 transition-transform duration-1000 ease-in-out'

@@ -28,7 +28,7 @@ const Apresentacao = () => {
   return (
 
     <section 
-      className= " lg:gap-[10px]  flex-wrap lg:flex lg:w-full justify-start text-white p-[10px] font-poppinsRegular  items-center  w-[450px] "
+      className= " lg:gap-[10px]  flex-wrap lg:flex lg:w-full justify-start text-white p-[10px] font-poppinsRegular  items-center  w-full m-[5px]"
       id="sobre"
     >
      
@@ -86,7 +86,7 @@ const Apresentacao = () => {
 
           <section className="flex lg:justify-start justify-center items-center mt-10">
             <a href="/julia palma curricul.pdf" download className="relative inline-block px-6 py-3 rounded-lg font-bold bg-[#c300ff] text-black overflow-hidden group">
-              <span className="absolute inset-0 w-full h-full bg-[#7f5c97] transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-500 ease-in-out"></span>
+              <span className="absolute inset-0 w-full h-full bg-[#8136b3] transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-500 ease-in-out"></span>
               <span className="relative z-40  text-white flex">
                 <FaFileDownload 
                 className='mt-[5px] mr-[10px] '
