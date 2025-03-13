@@ -13,15 +13,15 @@ Para um olhar mais detalhado sobre minha jornada e habilidades, visite meu portf
 Aqui estão alguns dos meus projetos mais recentes:
 
 1. **[Projeto Delivery](https://github.com/juliapalmacunha/Projeto-delivery)**  
-   Uma aplicação de pedidos online para um restaurante, com integração ao WhatsApp para facilitar o atendimento ao cliente. Desenvolvido com **React**, **Tailwind CSS**, **JavaScript** e **Firebase**.  
+   Uma aplicação de pedidos online para um restaurante, com integração ao WhatsApp para facilitar o atendimento ao cliente. Desenvolvido com **JavaScript**, **Html**, e **Tailwind CSS**.  
    **Link de demonstração**: [projeto-delivery](https://projeto-delivery-pi.vercel.app)
 
 2. **[Portfólio Dev](https://github.com/juliapalmacunha/Portifolio-dev)**  
-   Meu próprio portfólio online, onde você pode encontrar mais detalhes sobre meus projetos e habilidades.  
+   Meu próprio portfólio online, onde você pode encontrar mais detalhes sobre meus projetos e habilidades, desenvolvido com: **React**, e **Tailwind CSS**  
    **Link de demonstração**: [portifolio-dev](https://portifolio-dev-green.vercel.app)
 
 3. **[Keychain ERP](https://github.com/juliapalmacunha/Keychain-ERP)**  
-   Um sistema de ERP para gerenciamento de chaves e permissões, desenvolvido com **React** e **Node.js**.  
+   Um sistema de ERP para gerenciamento produtos e vendas, desenvolvido com **React**, **Firebase**, **MUI**, e **Recharts**.  
    **Link de demonstração**: [keychain-erp](https://keychain-erp.vercel.app)
 
 4. **[Jogo Educativo](https://github.com/juliapalmacunha/jogo-educativo)**  
@@ -32,7 +32,7 @@ Aqui estão alguns dos meus projetos mais recentes:
 
 ## 🛠️ Tecnologias que uso
 
-- **Front-End**: HTML, CSS, JavaScript, React, TypeScript, Tailwind CSS, Styled Components
+- **Front-End**: HTML, CSS, JavaScript, React, TypeScript, Tailwind CSS, Styled Components, Material UI.
 - **Back-End**: Node.js, Firebase
 - **Outras**: Git, GitHub
 
