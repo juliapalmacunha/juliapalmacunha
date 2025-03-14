@@ -21,7 +21,7 @@ const TypingEffect = ({ text, speed }) => {
   }, [displayedText, index, text, speed]);
 
   return (
-    <motion.span className="font-mono text-[24px] border-b-4 border-purple-500">
+    <motion.span className="font-mono lg:text-[24px] text-[20px] border-b-4 border-purple-500">
       {displayedText}
     
       {isTypingDone && (
@@ -41,11 +41,11 @@ const Inicio = () => {
     <div className="flex">
       <div className="flex-1 flex pt-[350px] items-center justify-center w-[100%] h-[650px]">
         <div className="text-center pb-[200px]">
-          <h1 className="font-poppinsSemibold text-[80px] bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <h1 className="font-poppinsSemibold lg:text-[80px] text-[40px] bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
             Julia Palma Cunha
           </h1>
 
-          <p className="font-codeRegular text-[24px]">
+          <p className="font-codeRegular lg:text-[24px] text-[20px] ">
             Desenvolvedora <TypingEffect text="Front-end" speed={0.1} />
           </p>
 
