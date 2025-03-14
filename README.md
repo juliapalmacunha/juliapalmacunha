@@ -32,8 +32,8 @@ Para um olhar mais detalhado sobre minha jornada e habilidades, visite meu portf
 
 ## 📞 Como me encontrar
 
-- **Email**: [juliapalmacunha@gmail.com](juliapalmacunha@gmail.com)
-- **LinkedIn**: [linkedin.com/in/juliapalmacunha](https://www.linkedin.com/in/julia-palma-cunha/)
-- **GitHub**: [github.com/juliapalmacunha](https://github.com/juliapalmacunha)
+- **Email**: [Email](mailto:juliapalmacunha@gmail.com)
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/julia-palma-cunha/)
+
 
 ---
