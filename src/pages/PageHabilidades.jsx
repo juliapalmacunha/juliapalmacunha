@@ -45,14 +45,15 @@ const PageHabilidades = () => {
 
                 {habilidades.map((habilidade) => {
                     return <motion.div
+                       key={habilidade.nome}
                         initial={{ opacity: 0, y: -50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true }}
                     >
 
-                        <div key={habilidade.nome} className=' w-[380px] lg:w-[320px] h-[250px] rounded-lg font-codeSemibold text-[28px] overflow-hidden 
-                    bg-[#ffffff00] hover:bg-[#beaeae95] 
+                        <div key={habilidade.nome} className='w-[380px] lg:w-[390px] h-[250px] rounded-lg font-codeSemibold text-[28px] overflow-hidden 
+                    bg-[#ffffff00] hover:bg-[#bab1b178] 
                     hover:scale-110 transition-transform duration-1000 ease-in-out'
                         >
                             <div className='flex gap-[10px] '>

@@ -28,7 +28,7 @@ const Apresentacao = () => {
   return (
 
     <section 
-      className= " lg:gap-[10px]  flex-wrap lg:flex lg:w-full justify-start text-white p-[10px] font-poppinsRegular  items-center  w-full m-[5px]"
+      className= " lg:gap-[10px]  flex-wrap lg:flex lg:w-full justify-start text-white p-[5px] font-poppinsRegular  items-center  w-full m-[5px]"
       id="sobre"
     >
      

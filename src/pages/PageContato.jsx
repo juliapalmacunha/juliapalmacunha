@@ -21,18 +21,18 @@ const Contato = () => {
   };
 
 
-  const estilizandoInputs = "bg-[#d6d6d6dd] p-[10px] w-full rounded-[5px] h-[35px] placeholder:text-[#4c4848]"
+  const estilizandoInputs = "bg-[#d6d6d6dd] p-[10px] w-full rounded-[5px] h-[45px] placeholder:text-[#4c4848]"
 
   return (
 
-    <section className='text-white m-[20px] mb-[5px] font-poppinsRegular'
+    <section className='text-white m-[20px] mb-[80px] font-poppinsRegular'
     id='contato'
     >
       <EnglobaTitulo>Contato</EnglobaTitulo>
 
-      <div className='w-full h-[450px] lg:w-[50%] '>
+      <div className='w-full h-[500px] lg:w-[50%] '>
         <form
-          className='flex flex-col gap-[12px] text-start lg:p-[40px] w-full h-full'
+          className='flex flex-col gap-[12px] text-start lg:p-[30px] w-full h-full'
           onSubmit={handleSendEmail}
         >
           <div>
@@ -69,7 +69,7 @@ const Contato = () => {
               id='mensagem'
               name='mensagem'
               rows='4'
-              className='bg-[#d6d6d6dd] p-[10px] w-full rounded-[10px] placeholder:text-[#4c4848]'
+              className='bg-[#d6d6d6dd] p-[10px] w-full h-[200px] rounded-[10px] placeholder:text-[#4c4848]'
               placeholder='Mensagem'
               value={mensagem}
               onChange={(e) => setMensagem(e.target.value)}
@@ -78,7 +78,7 @@ const Contato = () => {
 
           <button
             type='submit'
-            className='bg-gradient-to-r from-[#7b2cbf] to-[#f9c5e3] rounded-[5px] w-full h-[35px] hover:bg-gradient-to-r hover:from-[#5a1a9f] hover:to-[#e0a7c2] '
+            className='bg-gradient-to-r from-[#7b2cbf] to-[#f9c5e3] rounded-[5px] w-full h-[40px]  hover:bg-gradient-to-r hover:from-[#5a1a9f] hover:to-[#e0a7c2] '
           >
             Enviar
           </button>

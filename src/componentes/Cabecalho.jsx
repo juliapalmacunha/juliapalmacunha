@@ -16,12 +16,12 @@ const Cabecalho = () => {
   };
 
   return (
-    <div className='flex fixed justify-between items-center top-0 left-0 h-[80px] w-full bg-[#020407] font-codeRegular text-[14px] z-50'>
+    <div className='flex fixed justify-between items-center top-0 left-0 h-[60px] w-full bg-[#020407] font-codeRegular text-[14px] z-50'>
     
-      <p className='text-black-500 ml-[100px] text-[25px]'>Júlia Palma Cunha</p>
+      <p className='text-black-500 ml-[100px] text-[25px]'></p>
 
-      <nav className='hidden lg:flex justify-between mr-[100px]'>
-        <ul className='flex space-x-4'>
+      <nav className='hidden lg:flex justify-between mr-[100px]  '>
+        <ul className='flex space-x-12'>
           {setores.map((setor) => (
             <li key={setor.nome}>
               <a className='no-underline scroll-smooth' href={`#${setor.nome}`}>
@@ -42,7 +42,7 @@ const Cabecalho = () => {
 
 
       {menuAberto && (
-        <nav className='absolute top-20 left-0 w-full bg-[#020407] z-40'>
+        <nav className='absolute top-20 left-0 w-full bg-[#020407] z-40 '>
           <ul className='flex flex-col items-center space-y-4'>
             {setores.map((setor) => (
               <li key={setor.nome}>
