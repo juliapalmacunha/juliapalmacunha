@@ -39,9 +39,9 @@ const Inicio = () => {
   return (
 
     <div className="flex">
-      <div className="flex-1 flex pt-[350px] items-center justify-center w-[100%] h-[650px]">
+      <div className="flex-1 flex lg:pt-[350px] pt-[250px] items-center justify-center w-[100%] h-[650px]">
         <div className="text-center pb-[200px]">
-          <h1 className="font-poppinsSemibold lg:text-[80px] text-[40px] bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <h1 className="font-poppinsSemibold lg:text-[80px] text-[35px] bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
             Julia Palma Cunha
           </h1>
 
