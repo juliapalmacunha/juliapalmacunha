@@ -85,13 +85,13 @@ const Apresentacao = () => {
           <p className="pt-7 lg:w-[50%] ">Quer saber mais sobre minha jornada? Você pode baixar meu currículo clicando no botão abaixo.</p>
 
           <section className="flex lg:justify-start justify-center items-center mt-6">
-            <a href="/julia palma curricul.pdf" download className="relative inline-block px-6 py-3 rounded-lg font-bold bg-[#c300ff] text-black overflow-hidden group">
+            <a href="/Julia Palma Cunha CurriculoDev.pdf" download className="relative inline-block px-6 py-3 rounded-lg font-bold bg-[#c300ff] text-black overflow-hidden group">
               <span className="absolute inset-0 w-full h-full bg-[#8136b3] transform scale-x-0 group-hover:scale-x-100 origin-left transition-all duration-500 ease-in-out"></span>
               <span className="relative z-40  text-white flex">
                 <FaFileDownload 
                 className='mt-[5px] mr-[10px] '
                 />
-                <p>Baixar Currículo</p>
+                <p>Baixar Currículo</p> 
                 </span>
             </a>
           </section>
