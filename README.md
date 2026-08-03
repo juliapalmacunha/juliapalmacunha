@@ -11,7 +11,7 @@
 <div>
   <a href="https://www.linkedin.com/in/julia-palma-cunha/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
   <a href="mailto:juliapcunha13@gmail.com"><img src="https://img.shields.io/badge/-Email-c14438?style=for-the-badge&logo=Gmail&logoColor=white" target="_blank"></a>
-  <a href="https://portifolio-dev-green.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/-Portfolio-%23121212?style=for-the-badge&logo=Polymer&logoColor=white" target="_blank"></a>
+  <a href="https://juliapalmacunha.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/-Portfolio-%23121212?style=for-the-badge&logo=Polymer&logoColor=white" target="_blank"></a>
 </div>
 
 ---
