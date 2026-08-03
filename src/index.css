@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "poppins-regular";
+  src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "poppins-semibold";
+  src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "gilroy-regular";
+  src: url("./assets/fonts/Gilroy-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "gilroy-semibold";
+  src: url("./assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "code-regular";
+  src: url("./assets/fonts/SourceCodePro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "code-semibold";
+  src: url("./assets/fonts/SourceCodePro-SemiBold.ttf") format("truetype");
+}
+
+@theme {
+  --font-poppinsRegular: "poppins-regular", sans-serif;
+  --font-poppinsSemibold: "poppins-semibold", sans-serif;
+
+  --font-gilroyRegular: "gilroy-regular", sans-serif;
+  --font-gilroySemibold: "gilroy-semibold", sans-serif;
+
+  --font-codeRegular: "code-regular", monospace;
+  --font-codeSemibold: "code-semibold", monospace;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: white;
+  background-color: #17072b;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #020407;
+  }
+}
