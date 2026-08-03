@@ -55,7 +55,7 @@ export const projects = [
 
     technologies: ["React", "Firebase", "MUI", "Recharts"],
 
-    image: "/src/assets/images/erp.png",
+    image: "/public/erp.png",
 
     siteUrl: "https://keychain-erp.vercel.app/",
 
@@ -71,7 +71,7 @@ export const projects = [
 
     technologies: ["JavaScript", "HTML", "Tailwind CSS"],
 
-    image: "/src/assets/images/delivery.png",
+    image: "/public/delivery.png",
 
     siteUrl: "https://projeto-delivery-pi.vercel.app/",
 
@@ -87,7 +87,7 @@ export const projects = [
 
     technologies: ["JavaScript", "HTML", "CSS"],
 
-    image: "/src/assets/images/jogo.png",
+    image: "/public/jogo.png",
 
     siteUrl: "https://jogo-educativo-sigma.vercel.app/",
 
