@@ -1,29 +1,19 @@
 import { Header } from "./components/layout/Header";
-import { Divider } from "./components/ui/Divider";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
 import { Projects } from "./pages/Projects";
+import { Experience } from "./pages/Experience";
+import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 
 export function App() {
   return (
-    <div className="bg-[#020407] min-h-screen font-sans selection:bg-[#c300ff] selection:text-white">
-      
-      
+    <div className="min-h-screen bg-paper font-sans text-ink">
+      <Header />
       <main>
-        <Header />
         <Home />
-
-        <Divider />
-
-        <About />
-
-        <Divider />
-
         <Projects />
-
-        <Divider />
-
+        <Experience />
+        <About />
         <Contact />
       </main>
     </div>

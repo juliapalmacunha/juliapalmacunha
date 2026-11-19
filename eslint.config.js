@@ -19,6 +19,9 @@ export default defineConfig([
     ],
 
     languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      parserOptions: { ecmaFeatures: { jsx: true } },
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -28,6 +31,7 @@ export default defineConfig([
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...reactRefresh.configs.vite.rules,
+      "no-unused-vars": ["error", { varsIgnorePattern: "^([A-Z_]|motion$)" }],
     },
   },
 ]);

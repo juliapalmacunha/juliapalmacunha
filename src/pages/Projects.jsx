@@ -1,187 +1,222 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
-import { IoClose } from "react-icons/io5";
-import TitleWrapper from "../components/ui/TitleWrapper";
-import ProjectDetails from "../components/ui/ProjectDetails";
-import { languages } from "../data/index.js";
-import { useLanguage } from "../context/useLanguage.js";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FiPlay, FiX } from "react-icons/fi";
+import { useContent } from "../context/useContent.js";
+import { Figure, Reveal, Section, Stack, TextLink } from "../components/ui/Section.jsx";
+
+function Endpoints({ lines }) {
+  return (
+    <pre className="h-[236px] overflow-x-auto bg-card p-5 font-mono md:h-[252px] text-[13px] leading-7 md:p-7">
+      {lines.map((line) => {
+        const [method, ...rest] = line.split(/\s+/);
+        return (
+          <div key={line}>
+            <span className="inline-block w-16 font-medium text-accent">{method}</span>
+            <span className="text-body">{rest.join(" ")}</span>
+          </div>
+        );
+      })}
+    </pre>
+  );
+}
+
+function ProjectMedia({ project }) {
+  if (project.media.type === "code") {
+    return (
+      <Figure caption="finance-app-api · endpoints">
+        <Endpoints lines={project.media.lines} />
+      </Figure>
+    );
+  }
+  return (
+    <Figure caption="keychain-erp.vercel.app">
+      <video
+        src={project.media.src}
+        poster={project.media.poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="block h-[236px] w-full object-cover md:h-[252px]"
+      />
+    </Figure>
+  );
+}
+
+function useEscape(onClose, lockScroll) {
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    if (lockScroll) document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      if (lockScroll) document.body.style.overflow = "";
+    };
+  }, [onClose, lockScroll]);
+}
+
+function Drawer({ project, labels, onClose, onPlay }) {
+  useEscape(onClose, true);
+  return (
+    <motion.div className="fixed inset-0 z-[60] flex justify-end" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <button type="button" aria-label={labels.closeLabel} className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <motion.aside
+        role="dialog"
+        aria-modal="true"
+        aria-label={project.name}
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ type: "tween", duration: 0.28, ease: "easeOut" }}
+        className="relative h-full w-full max-w-xl overflow-y-auto bg-paper px-6 py-8 md:px-10"
+      >
+        <div className="flex items-start justify-between gap-4 border-b border-rule pb-6">
+          <div>
+            <h3 className="text-2xl font-semibold tracking-tight">{project.name}</h3>
+            <p className="mt-1 text-sm text-soft">{project.badge}</p>
+          </div>
+          <button type="button" onClick={onClose} aria-label={labels.closeLabel} className="p-1 text-soft hover:text-ink">
+            <FiX size={22} />
+          </button>
+        </div>
+
+        <div className="divide-y divide-rule">
+          {project.details.map((d) => (
+            <div key={d.title} className="py-6">
+              <h4 className="font-medium">{d.title}</h4>
+              <p className="mt-2 leading-relaxed text-body">{d.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="border-t border-rule pt-6">
+          <Stack items={project.stack ?? []} />
+          <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
+            {project.video && (
+              <button type="button" onClick={onPlay} className="inline-flex items-center gap-1.5 text-sm font-medium text-accent">
+                <FiPlay /> {labels.videoLabel}
+              </button>
+            )}
+            {(project.links ?? []).map((l) => <TextLink key={l.url} href={l.url}>{l.label}</TextLink>)}
+          </div>
+        </div>
+      </motion.aside>
+    </motion.div>
+  );
+}
+
+function VideoModal({ src, poster, label, onClose }) {
+  useEscape(onClose, false);
+  return (
+    <motion.div
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 p-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <div className="w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+        <div className="mb-2 flex justify-end">
+          <button type="button" onClick={onClose} aria-label={label} className="p-2 text-white/70 hover:text-white">
+            <FiX size={22} />
+          </button>
+        </div>
+        <video src={src} poster={poster} controls autoPlay playsInline className="w-full rounded-lg" />
+      </div>
+    </motion.div>
+  );
+}
+
+function ProjectItem({ project, labels, onOpen, onPlay }) {
+  return (
+    <Reveal>
+      <ProjectMedia project={project} />
+
+      <div className="mt-8 grid gap-6 md:grid-cols-9">
+        <div className="md:col-span-5">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <h3 className="text-2xl font-semibold tracking-tight">{project.name}</h3>
+            <span className="text-sm text-soft">{project.badge}</span>
+          </div>
+          <p className="mt-3 leading-relaxed text-body">{project.summary}</p>
+          <div className="mt-4">
+            <Stack items={project.stack ?? []} />
+          </div>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <button type="button" onClick={onOpen} className="rounded-md bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-accent-ink">
+              {labels.detailsLabel}
+            </button>
+            {project.video && (
+              <button type="button" onClick={onPlay} className="inline-flex items-center gap-1.5 text-sm font-medium text-accent">
+                <FiPlay /> {labels.videoLabel}
+              </button>
+            )}
+            {(project.links ?? [])
+              .filter((l) => !l.url.includes("github.com"))
+              .map((l) => <TextLink key={l.url} href={l.url}>{l.label}</TextLink>)}
+          </div>
+        </div>
+
+        <dl className="border-t border-rule md:col-span-3 md:col-start-7">
+          {project.highlights.map((m) => (
+            <div key={m.label} className="flex items-baseline justify-between gap-4 border-b border-rule py-3">
+              <dt className="text-sm text-soft">{m.label}</dt>
+              <dd className="text-lg font-semibold">{m.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </Reveal>
+  );
+}
 
 export function Projects() {
-  const { language } = useLanguage();
-  const { projects, descriptionSections, titleSections } = languages[language];
-
-  const [activeCardIndex, setActiveCardIndex] = useState(null);
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const handleCloseModal = () => setSelectedProject(null);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") handleCloseModal();
-    };
-
-    if (selectedProject) {
-      window.addEventListener("keydown", handleKeyDown);
-    }
-
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedProject]);
-
-  const handleOutsideClick = (e) => {
-    if (e.target === e.currentTarget) {
-      handleCloseModal();
-    }
-  };
+  const { t } = useContent();
+  const p = t.projects;
+  const [openId, setOpenId] = useState(null);
+  const [video, setVideo] = useState(null);
+  const openProject = p.items.find((it) => it.id === openId);
 
   return (
-    <section
-      id="projects"
-      className="w-full max-w-5xl mx-auto text-white py-12 px-6 lg:px-8 pt-[75px] font-poppinsRegular scroll-mt-10"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <TitleWrapper>{titleSections.projects}</TitleWrapper>
-      </motion.div>
-
-      <p className="text-gray-400 mt-4 mb-8 text-sm lg:text-base">
-        {descriptionSections.projects}
-      </p>
-
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {projects.map((project, index) => {
-          const isActive = activeCardIndex === index;
-
-          return (
-            <motion.div
-              key={project.id}
-              className="relative bg-[#1a1a1a] rounded-2xl shadow-lg border border-gray-800 overflow-hidden cursor-pointer group flex flex-col justify-between"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              onClick={() => setActiveCardIndex(isActive ? null : index)}
-            >
-              <div className="relative w-full h-[200px] overflow-hidden bg-[#0d0d0d]">
-                <img
-                  src={project.image}
-                  alt={`Capa do projeto ${project.name}`}
-                  className={`w-full h-full object-cover transition-all duration-500 ease-in-out ${
-                    isActive
-                      ? "scale-110 brightness-[0.3] blur-[2px]"
-                      : "group-hover:scale-110 group-hover:brightness-[0.3] group-hover:blur-[2px]"
-                  }`}
-                />
-
-                <div
-                  className={`absolute inset-0 flex flex-col justify-center items-center text-white bg-black/40 backdrop-blur-sm transition-all duration-500 ease-in-out ${
-                    isActive
-                      ? "opacity-100 visible"
-                      : "opacity-0 invisible group-hover:opacity-100 group-hover:visible"
-                  }`}
-                >
-                  <div className="flex flex-col gap-3 items-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="flex gap-4">
-                        <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1.5 text-gray-300 hover:text-[#c300ff] transition-colors font-medium text-xs lg:text-sm"
-                      >
-                        <FaGithub size={18} />
-                        <span>Repositório</span>
-                      </a>
-
-                      <a
-                        href={project.siteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1.5 text-gray-300 hover:text-pink-500 transition-colors font-medium text-xs lg:text-sm"
-                      >
-                        <FaArrowUpRightFromSquare size={16} />
-                        <span>Visitar</span>
-                      </a>
-                    </div>
-
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedProject(project);
-                      }}
-                      className="mt-2 relative inline-flex items-center justify-center px-5 py-2 rounded-lg font-semibold bg-[#c300ff] text-white overflow-hidden group/btn transition-all shadow-[0_0_15px_rgba(195,0,255,0.4)]"
-                    >
-                      <span className="absolute inset-0 w-full h-full bg-[#9b00cc] transform scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
-                      <span className="relative z-10 text-xs lg:text-sm">
-                        Detalhes
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 border-t border-gray-800 bg-[#141414]">
-                <h3 className="font-semibold text-gray-200 text-base text-center truncate">
-                  {project.name}
-                </h3>
-              </div>
-            </motion.div>
-          );
-        })}
+    <Section id="projetos" title={p.title}>
+      <div className="space-y-20 md:space-y-28">
+        {p.items.map((project) => (
+          <ProjectItem
+            key={project.id}
+            project={project}
+            labels={p}
+            onOpen={() => setOpenId(project.id)}
+            onPlay={() => setVideo(project)}
+          />
+        ))}
       </div>
 
-      
+      <Reveal className="mt-20 border-t border-rule pt-8 md:mt-28">
+        <h3 className="text-sm font-medium text-soft">{p.early.title}</h3>
+        {p.early.items.map((it) => (
+          <div key={it.name} className="mt-5 flex items-center gap-5">
+            <img src={it.image} alt={it.name} loading="lazy" className="h-16 w-24 shrink-0 rounded border border-rule object-cover" />
+            <div>
+              <p className="font-medium">{it.name}</p>
+              <p className="text-sm text-body">{it.text}</p>
+              <div className="mt-1 flex gap-4">
+                <TextLink href={it.siteUrl}>{p.early.siteLabel}</TextLink>
+                <TextLink href={it.githubUrl}>{p.early.codeLabel}</TextLink>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Reveal>
+
       <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            onClick={handleOutsideClick}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] flex justify-center items-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 30, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.9, y: 30, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="bg-[#1a1a1a] border border-gray-700 p-6 lg:p-8 rounded-2xl shadow-2xl w-full max-w-3xl relative overflow-hidden text-white"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#c300ff] rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
-
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-800 relative z-10">
-                <h2 className="font-poppinsSemibold text-2xl lg:text-[28px] bg-gradient-to-r from-[#c300ff] to-pink-500 bg-clip-text text-transparent">
-                  {selectedProject.name}
-                </h2>
-                <button
-                  onClick={handleCloseModal}
-                  aria-label="Fechar modal"
-                  className="p-2 bg-gray-800/50 hover:bg-gray-700 rounded-full transition-colors group"
-                >
-                  <IoClose
-                    size={24}
-                    className="text-gray-400 group-hover:text-white"
-                  />
-                </button>
-              </div>
-
-              <div className="w-full relative z-10 text-gray-300">
-                <ProjectDetails
-                  technologies={selectedProject.technologies}
-                  description={selectedProject.text}
-                />
-              </div>
-            </motion.div>
-          </motion.div>
+        {openProject && (
+          <Drawer project={openProject} labels={p} onClose={() => setOpenId(null)} onPlay={() => setVideo(openProject)} />
         )}
       </AnimatePresence>
-    </section>
+      <AnimatePresence>
+        {video && <VideoModal src={video.video} poster={video.media.poster} label={p.closeLabel} onClose={() => setVideo(null)} />}
+      </AnimatePresence>
+    </Section>
   );
 }
 
